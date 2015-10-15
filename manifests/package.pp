@@ -16,7 +16,7 @@ class zookeeper::package(
     }
 
     if $ensure == "present" {
-      $shim_ensure = "file",
+      $shim_ensure = "file"
     } else {
       $shim_ensure = $ensure
     }
