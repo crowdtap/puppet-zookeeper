@@ -15,6 +15,11 @@ class zookeeper::package(
       default => absent,
     }
 
+    if $ensure == "present" {
+      $shim_ensure = "file",
+    } else {
+      $shim_ensure = $ensure
+    }
 
     package { $package:
       ensure => $real_ensure,
