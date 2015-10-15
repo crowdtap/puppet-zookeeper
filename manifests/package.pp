@@ -46,7 +46,7 @@ class zookeeper::package(
           'zkCli',
           'zkCleanup'
         ]:
-          ensure    => $ensure,
+          ensure    => $shim_ensure,
           configdir => $configdir;
       }
     }
