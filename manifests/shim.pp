@@ -9,6 +9,7 @@ define zookeeper::shim(
 
   file { "${boxen::config::homebrewdir}/bin/${name}":
     ensure  => $ensure,
+    replace => true,
     content => template('zookeeper/shim_script'),
     mode    => '0755',
     owner   => $::boxen_user,
